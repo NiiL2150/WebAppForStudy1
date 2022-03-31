@@ -36,6 +36,8 @@ namespace WebAppForStudy1
                 app.UseExceptionHandler(options);
             }
 
+            app.UseWelcomePage("/welcome");
+
             //app.Map("/error", TestRun);
 
             /*
@@ -47,12 +49,14 @@ namespace WebAppForStudy1
 
             app.UseHealthChecks("/health");
 
+            /*
             app.Use((context, next) =>
             {
                 int b = 0;
                 int x = 5 / b;
                 return next();
             });
+            */
 
             DefaultFilesOptions fileOptions = new DefaultFilesOptions();
             fileOptions.DefaultFileNames.Add("page.html");
